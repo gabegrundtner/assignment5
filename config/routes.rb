@@ -1,9 +1,13 @@
 Assignment5::Application.routes.draw do
-  resources :orders
+  #resources :orders
 
   resources :items
 
-  resources :customers
+  #resources :customers
+
+  resources :customers do
+        resources :orders
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -5,10 +5,7 @@
   <%= @order.quantity %>
 </p>
 
-<p>
-  <b>Item name:</b>
-  <%= @order.item_name %>
-</p>
+
 
 <p>
   <b>Total cost:</b>
@@ -17,12 +14,12 @@
 
 <p>
   <b>Customer:</b>
-  <%= @order.customer_id %>
+  <%= @order.customer.name %>
 </p>
 
 <p>
   <b>Item:</b>
-  <%= @order.item_id %>
+  <%= @order.item.name %>
 </p>
 
 

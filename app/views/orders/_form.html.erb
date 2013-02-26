@@ -15,23 +15,26 @@
     <%= f.label :quantity %><br />
     <%= f.number_field :quantity %>
   </div>
-  <div class="field">
-    <%= f.label :item_name %><br />
-    <%= f.text_field :item_name %>
-  </div>
+  
   <div class="field">
     <%= f.label :total_cost %><br />
     <%= f.text_field :total_cost %>
   </div>
+  
   <div class="field">
-    <%= f.label :customer_id %><br />
-    <%= f.number_field :customer_id %>
+    <%= f.label :customer_name %><br />
+    <%= f.text_field :customer_name, :value=>customer_name(@order) %>
   </div>
-  <div class="field">
-    <%= f.label :item_id %><br />
-    <%= f.number_field :item_id %>
+  
+  <div class="field">  
+  <%= f.label :item %><br />  
+  <%= f.collection_select :item_id, Item.all, :id, :name %>  
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+
+

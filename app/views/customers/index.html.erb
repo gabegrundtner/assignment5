@@ -1,27 +1,16 @@
-<h1>Listing customers</h1>
+<div class="container">
+<%= render 'head' %>
+<br>
+<div class="span3">
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Phone</th>
-    <th>Contact</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class"span10">
 
-<% @customers.each do |customer| %>
-  <tr>
-    <td><%= customer.name %></td>
-    <td><%= customer.phone %></td>
-    <td><%= customer.contact %></td>
-    <td><%= link_to 'Show', customer %></td>
-    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-    <td><%= link_to 'Destroy', customer, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <%= display_customers(@customers) %>
+</div>
+<%= render 'footer' %>
+</div>
 
-<br />
 
-<%= link_to 'New Customer', new_customer_path %>
+
+

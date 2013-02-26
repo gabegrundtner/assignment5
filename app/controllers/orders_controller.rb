@@ -1,8 +1,9 @@
 class OrdersController < ApplicationController
+  before_filter :convert_customer_name_to_id, :only => [:create, :update]
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = Customer.find_by_id(params[:customer_id]).orders #Orders.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +25,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   # GET /orders/new.json
   def new
-    @order = Order.new
+    @order = Customer.find_by_id(params[:customer_id]).orders.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -79,5 +80,14 @@ class OrdersController < ApplicationController
       format.html { redirect_to orders_url }
       format.json { head :no_content }
     end
+  end
+  private
+  def convert_customer_name_to_id
+    customer_name = params[:order][:customer_name]
+    customer = Customer.find_by_name(customer_name)
+    params[:order].delete(:customer_name)
+    c_id = customer.id
+    add_id = {:order => {:customer_id => c_id}}
+    params[:order] = params[:order].merge(add_id[:order])
   end
 end

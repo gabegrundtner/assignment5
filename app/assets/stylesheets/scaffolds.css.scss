@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #f9f9f9;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -19,9 +19,9 @@ pre {
 }
 
 a {
-  color: #000;
+  color: lightRed;
   &:visited {
-    color: #666;
+    color: purple;
   }
   &:hover {
     color: #fff;
@@ -67,3 +67,8 @@ div {
     list-style: square;
   }
 }
+
+.table {
+  background-color: lightGreen;
+}
+
