@@ -12,7 +12,7 @@ module OrdersHelper
 			item = Item.find(order.item_id).name
 			q = order.quantity
 			tc = order.total_cost
-			the_string += "<tr><td>#{cn}</td><td>#{id1}</td><td>#{item}</td><td>#{q}</td><td>#{tc}</td><td>#{link_to 'Show', order}</td><td>#{link_to 'Edit', edit_order_path(order)}</td><td>#{link_to 'Destroy', order, confirm: 'Are you sure?', method: :delete}</td></tr>"
+			the_string += "<tr><td>#{cn}</td><td>#{id1}</td><td>#{item}</td><td>#{q}</td><td>#{tc}</td></tr>"
 		end
 		the_string += "</tbody></table>"
 		the_string.html_safe
